@@ -153,7 +153,7 @@
                     </attribute>
                     <attribute qualifier="name" type="localized:java.lang.String">
                         <description>Seller name</description>
-                        <modifiers search="true"/>
+                        <modifiers />
                         <persistence type="property"/>
                     </attribute>
                     <attribute qualifier="location" type="java.lang.String">
