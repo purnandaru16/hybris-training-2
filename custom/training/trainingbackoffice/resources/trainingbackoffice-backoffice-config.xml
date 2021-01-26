@@ -23,4 +23,22 @@
 	   </na:notification-area>
 	</context>
 
+	<context component="explorer-tree" merge-by="module">
+		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+			<n:navigation-node id="Training">
+				<n:type-node id="Seller" code="Seller"/>
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+
+	<context merge-by="type" parent="GenericItem" type="Seller" component="listview" module="trainingbackoffice">
+		<list-view:list-view xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+							 xmlns:y="http://www.hybris.com/cockpit/config/hybris">
+			<list-view:column qualifier="code"/>
+			<list-view:column qualifier="name"/>
+			<list-view:column qualifier="location"/>
+			<list-view:column qualifier="npwp"/>
+		</list-view:list-view>
+	</context>
+
 </config>

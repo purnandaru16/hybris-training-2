@@ -31,6 +31,11 @@
             <value code="INWAREHOUSE"/>
             <value code="SOLDOUT"/>
         </enumtype>
+
+        <enumtype generate="true" code="ManagerApproval" autocreate="true" dynamic="true">
+            <value code="APPROVED"/>
+            <value code="REJECTED"/>
+        </enumtype>
     </enumtypes>
 
     <itemtypes>
@@ -140,6 +145,12 @@
                         <defaultvalue>em().getEnumerationValue("ActiveStatus","ACTIVE")</defaultvalue>
                         <persistence type="property" />
                     </attribute>
+                    <attribute qualifier="managerApproval" type="ManagerApproval">
+                        <description>Approval Manager</description>
+                        <modifiers />
+                        <defaultvalue>em().getEnumerationValue("ManagerApproval","APPROVED")</defaultvalue>
+                        <persistence type="property" />
+                    </attribute>
                 </attributes>
             </itemtype>
 
@@ -165,6 +176,17 @@
                         <description>Seller NPWP</description>
                         <modifiers />
                         <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+
+            <itemtype code="TestActionProcess"
+                      jaloclass="de.hybris.platform.commerceservices.jalo.process.TestActionProcess"
+                      extends="BusinessProcess">
+                <attributes>
+                    <attribute qualifier="something" type="java.lang.String">
+                        <persistence type="property" />
+                        <description>something</description>
                     </attribute>
                 </attributes>
             </itemtype>

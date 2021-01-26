@@ -471,6 +471,11 @@
 		<property name="resource" value="classpath:/trainingcore/processes/quote/quote-expired-email-process.xml"/>
 	</bean>
 
+	<bean id="testActionProcessDefinitionResource"
+		  class="de.hybris.platform.processengine.definition.ProcessDefinitionResource" >
+		<property name="resource" value="classpath:/trainingcore/processes/test/test-action-process.xml"/>
+	</bean>
+
 	<!-- Quotes email notification jobs -->
 	<bean id="quoteToExpireSoonJobPerformable"
 		  class="org.training.core.job.QuoteToExpireSoonJobPerformable"
@@ -509,7 +514,9 @@
 	<import resource="/trainingcore/processes/quote/quote-expired-email-process-spring.xml"/>
 
 	<import resource="/trainingcore/processes/quote/quote-post-cancellation-process-spring.xml"/>
-	
+
+	<import resource="/trainingcore/processes/test/test-action-process-spring.xml"/>
+
 	<!-- Customer cleanup -->
 	<alias name="defaultCustomerCleanupRelatedObjectsAction" alias="customerCleanupRelatedObjectsAction"/>
 	<bean id="defaultCustomerCleanupRelatedObjectsAction" class="org.training.core.retention.impl.DefaultCustomerCleanupRelatedObjectsAction" parent="abstractExtensibleRemoveCleanupAction">
